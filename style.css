@@ -282,3 +282,70 @@ canvas {
     font-family: 'League Script', cursive; 
     font-weight: 400; color: #000000; font-size: 30px; letter-spacing: 0; line-height: normal; white-space: nowrap; 
 }
+
+/* =========================================
+   RESPONSIVE DESIGN (AGAR AMAN DI HP & TABLET)
+========================================= */
+
+/* Aturan untuk Layar Tablet / Laptop Kecil */
+@media (max-width: 1024px) {
+    .book {
+        /* Memperkecil buku menjadi 75% dari ukuran asli */
+        transform: translateX(225px) rotate(-1deg) scale(0.75);
+    }
+}
+
+/* Aturan untuk Layar Handphone (HP) */
+@media (max-width: 768px) {
+    .book {
+        /* Memperkecil buku menjadi 40% agar muat saat dibuka melebar di HP */
+        transform: translateX(225px) rotate(-1deg) scale(0.40);
+    }
+    
+    /* Membesarkan sedikit teks petunjuk agar tetap terbaca di HP */
+    .tap-hint {
+        font-size: 16px; 
+        bottom: -40px; 
+    }
+
+    /* Menyesuaikan teks judul awal di HP */
+    #start-screen h2 {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* Aturan untuk HP Layar Sangat Kecil (seperti iPhone lama) */
+@media (max-width: 480px) {
+    .book {
+        /* Memperkecil buku menjadi 35% */
+        transform: translateX(225px) rotate(-1deg) scale(0.35);
+    }
+}
+
+/* =========================================
+   ATURAN KHUSUS HP POSISI MENDATAR (LANDSCAPE)
+========================================= */
+@media (orientation: landscape) and (max-height: 600px) {
+    .book {
+        /* Memperkecil buku menjadi 55% agar muat di layar HP yang pendek ke bawah */
+        transform: translateX(225px) rotate(-1deg) scale(0.55);
+    }
+
+    /* Merapatkan jarak di layar pembuka agar tombol tidak terpotong ke bawah */
+    #start-screen h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    #start-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Menaikkan sedikit teks "Tap untuk Buka" */
+    .tap-hint {
+        bottom: -30px; 
+    }
+}
